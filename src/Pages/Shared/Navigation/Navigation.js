@@ -15,7 +15,7 @@ const Navigation = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ms-auto">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
+                    <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                     {
                         user.email ? <button className='btn-regular' onClick={logOut}>Logout</button> : <Nav.Link as={Link} to="/login" >Login</Nav.Link>
                     }
