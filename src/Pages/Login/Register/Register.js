@@ -2,11 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';
-import useFirebase from '../../../Hooks/useFirebase';
+import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
 
 const Register = () => {
-    const { registerUser, user } = useFirebase();
+    const { registerUser, user, error } = useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
     const onSubmit = data => {
@@ -20,14 +20,6 @@ const Register = () => {
             return;
         }
         registerUser(data.email, data.password)
-
-        user?.email && swal({
-            title: "Congratulation!",
-            text: "Successfully created account",
-            icon: "success",
-            button: "OK",
-        })
-
         reset();
     }
     return (
@@ -49,6 +41,8 @@ const Register = () => {
 
                     <input placeholder='Re-Password' type='password'  {...register("password2", { required: true })} className="form-control mb-4" />
                     {errors.password2 && <span className='text-danger'>This field is required</span>}
+
+                    <p>{error}</p>
 
                     <input type="submit" className="form-control btn-form" value='Register' />
                 </form>

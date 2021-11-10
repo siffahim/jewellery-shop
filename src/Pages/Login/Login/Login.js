@@ -1,12 +1,19 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
 import './Login.css';
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { loginUser, user, error } = useAuth();
+
+    const onSubmit = data => {
+        loginUser(data.email, data.password)
+        reset()
+    };
+
     return (
         <>
             <div className='row mx-auto p-3 w-75'>
@@ -21,6 +28,8 @@ const Login = () => {
 
                         <input placeholder='Password' {...register("password", { required: true })} className="form-control mb-4" />
                         {errors.password && <span className='text-danger'>This field is required</span>}
+
+                        <p>{error}</p>
 
                         <input type="submit" className="form-control btn-form" value='Login' />
                     </form>
