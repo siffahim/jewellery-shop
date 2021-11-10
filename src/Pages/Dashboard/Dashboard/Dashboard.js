@@ -40,12 +40,12 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <ListItem button ><Link to='/home'>Home</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}`}>Make Admin</Link></ListItem>
+                <ListItem button ><Link to={`${url}`}>Review</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
                 <ListItem button ><Link exact to={`${url}/manageAlOrders`}>Manage Orders</Link></ListItem>
                 <ListItem button ><Link exact to={`${url}/createProduct`}>Create Product</Link></ListItem>
                 <ListItem button ><Link exact to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
                 <ListItem button ><Link to={`${url}/myOrders`}>My Orders</Link></ListItem>
-                <ListItem button ><Link to={`${url}/review`}>Review</Link></ListItem>
                 <ListItem button ><Link to={`${url}/pay`}>Pay</Link></ListItem>
                 <ListItem button ><Link to={`${url}/logout`} onClick={logOut}>Logout</Link></ListItem>
             </List>
@@ -118,6 +118,9 @@ function Dashboard(props) {
                 <Toolbar />
                 <Switch>
                     <Route exact path={path}>
+                        <Review />
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
                         <MakeAdmin />
                     </Route>
                     <Route path={`${path}/myOrders`}>
@@ -131,9 +134,6 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/manageProduct`}>
                         <ManageProduct />
-                    </Route>
-                    <Route path={`${path}/review`}>
-                        <Review />
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Pay />
