@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
+import AddProduct from './Pages/AddProduct/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
 import Jewellery from './Pages/Jewellery/Jewellery';
@@ -26,9 +27,12 @@ function App() {
           <Route path='/register'>
             <Register />
           </Route>
-          <Route path='/jewellery'>
+          <Route exact path='/jewellery'>
             <Jewellery />
           </Route>
+          <PrivateRoute path='/jewellery/:purchaseId'>
+            <AddProduct />
+          </PrivateRoute>
           <PrivateRoute path='/dashboard'>
             <Dashboard />
           </PrivateRoute>

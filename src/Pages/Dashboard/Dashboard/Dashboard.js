@@ -58,7 +58,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ backgroundColor: '#cd2027' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"

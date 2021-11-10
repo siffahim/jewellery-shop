@@ -1,0 +1,40 @@
+.form-container{
+    width: 100%;
+}
+.form-container input{
+    width: 80%;
+    height: 44px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form input{
+    width: 70%;
+    height: 40px;
+    margin-top: 10px;
+}
+.card-detail{
+    height: 310px;
+    box-shadow: 0 0 3px rgb(0,0,0,0.3);
+    padding: 5px;
+    border-radius: 3px;
+}
+.card-detail img{
+    height: auto;
+}
+
+@media only screen and (max-width:688px){
+   .card-detail{
+        height: 610px;
+    }
+    .form-container input{
+         width:100%;
+        margin-bottom: 15px;
+    } 
+}
+
+/* @media only screen and (min-width:689px) and (max-width:988px){
+    .service-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+} */
