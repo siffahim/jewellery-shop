@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 import './Login.css';
 
 const Login = () => {
@@ -16,8 +18,9 @@ const Login = () => {
 
     return (
         <>
-            <div className='row mx-auto p-3 w-75'>
-                <div className='col-md-6 col-12 mx-auto shadow p-4 border'>
+            <Navigation />
+            <div className='row m-auto p-3 w-75'>
+                <div className='col-md-6 col-12 mx-auto shadow p-4'>
                     <p className='text-center'>
                         <img style={{ width: '180px' }} src={logo} alt="" />
                     </p>
@@ -36,6 +39,7 @@ const Login = () => {
                     <p className='text-muted mt-4'>have an account? <Link to='/register'>Create an account</Link></p>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };
