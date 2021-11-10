@@ -43,25 +43,21 @@ const Purchase = ({ product }) => {
                         {/* <h2 className='fw-bold text-custom'>BOOK & TRAVEL</h2>
                         <p className='text-muted'>Wherever you go,make yourself at home</p> */}
                         <form onSubmit={handleSubmit(onSubmit)}>
-                            <input type="text" defaultValue={user.displayName} {...register("name")} placeholder="Name" />
-                            <input defaultValue={user.email} {...register("email", { required: true })} placeholder="Email" />
+                            <input type="text" defaultValue={user.displayName} {...register("name")} placeholder="Name" className='form-control' />
+
+                            <input defaultValue={user.email} {...register("email", { required: true })} placeholder="Email" className='form-control' />
                             {errors.email && <span>This field is required</span>}
 
-                            <input type="text" {...register("from", { required: true })} placeholder="From" />
-                            {errors.from && <span className='text-danger'>This field is required</span>}
-                            <input type="text" {...register("to", { required: true })} placeholder="To" />
-                            {errors.to && <span className='text-danger'>This field is required</span>}
 
-                            <input type="text" {...register("country", { required: true })} placeholder="Present Country" />
+                            <input defaultValue={price} type="text" {...register("number", { required: true })} placeholder="Money" className='form-control' />
                             {errors.country && <span className='text-danger'>This field is required</span>}
 
-                            <input type="number" {...register("phone", { required: true })} placeholder="Phone" />
+                            <input type="number" {...register("phone", { required: true })} placeholder="Phone" className='form-control' />
                             {errors.phone && <span className='text-danger'>This field is required</span>}
 
-                            <input type="submit" value="Purchase" className='btn-regular' />
+                            <input type="submit" value="Proceed Now" className='btn-regular' />
                         </form>
                     </div>
-
                 </div>
             </div>
         </Container>

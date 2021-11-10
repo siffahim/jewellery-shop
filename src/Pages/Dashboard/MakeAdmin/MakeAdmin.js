@@ -12,11 +12,12 @@ const MakeAdmin = () => {
                 "content-type": "application/json"
             },
             body: JSON.stringify({ email })
-        }).then(data => {
-            if (data.modifiedCount) {
-                swal("Congratulation!", "Made Admin successfully", "success")
-            }
-        })
+        }).then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    swal("Congratulation!", "Login successfully", "success");
+                }
+            })
         e.preventDefault();
     }
     return (
