@@ -9,12 +9,13 @@ const Navigation = () => {
     return (
         <Navbar bg="light" className='px-3' variant="light" collapseOnSelect expand="lg">
             <Navbar.Brand href="#home">
-                <img width='160px' src={logo} alt="" />
+                <img width='150px' src={logo} alt="" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="ms-auto">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/jewellery">Jewellery</Nav.Link>
                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                     {
                         user.email ? <button className='btn-regular' onClick={logOut}>Logout</button> : <Nav.Link as={Link} to="/login" >Login</Nav.Link>

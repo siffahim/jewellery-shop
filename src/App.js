@@ -4,6 +4,7 @@ import './App.css';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
+import Jewellery from './Pages/Jewellery/Jewellery';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path='/register'>
             <Register />
+          </Route>
+          <Route path='/jewellery'>
+            <Jewellery />
           </Route>
           <PrivateRoute path='/dashboard'>
             <Dashboard />

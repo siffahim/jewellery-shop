@@ -12,12 +12,14 @@ const useFirebase = () => {
     const auth = getAuth();
 
     //email and password
-    const registerUser = (email, password) => {
+    const registerUser = (email, password, location, history) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const uri = location.state?.from || '/';
                 setUser(result.user)
                 swal({ title: "Congratulation!", text: "Successfully created account", icon: "success" })
+                history.push(uri)
                 setError('')
             })
             .catch(err => {
@@ -28,12 +30,14 @@ const useFirebase = () => {
             })
     }
 
-    const loginUser = (email, password) => {
+    const loginUser = (email, password, location, history) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
+                const uri = location.state?.from || '/';
                 setUser(result.user)
                 swal("Congratulation!", "Login successfully", "success");
+                history.push(uri)
                 setError('')
             })
             .catch(err => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
 import Footer from '../../Shared/Footer/Footer';
@@ -10,9 +10,11 @@ import './Login.css';
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { loginUser, user, error } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
 
     const onSubmit = data => {
-        loginUser(data.email, data.password)
+        loginUser(data.email, data.password, location, history)
         reset()
     };
 
@@ -29,7 +31,7 @@ const Login = () => {
                         <input placeholder='Email' {...register("email", { required: true })} className="form-control mb-2" />
                         {errors.email && <span className='text-danger'>This field is required</span>}
 
-                        <input placeholder='Password' {...register("password", { required: true })} className="form-control mb-4" />
+                        <input placeholder='Password' type='password' {...register("password", { required: true })} className="form-control mb-4" />
                         {errors.password && <span className='text-danger'>This field is required</span>}
 
                         <p>{error}</p>

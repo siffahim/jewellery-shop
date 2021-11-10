@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import swal from 'sweetalert';
 import useAuth from '../../../Hooks/useAuth';
 import logo from '../../../images/logo.png';
@@ -10,7 +10,8 @@ import Navigation from '../../Shared/Navigation/Navigation';
 const Register = () => {
     const { registerUser, user, error } = useAuth();
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
-
+    const location = useLocation();
+    const history = useHistory();
     const onSubmit = data => {
         if (data.password !== data.password2) {
             swal({
@@ -21,7 +22,7 @@ const Register = () => {
             });
             return;
         }
-        registerUser(data.email, data.password)
+        registerUser(data.email, data.password, location, history)
         reset();
     }
     return (
