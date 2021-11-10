@@ -1,13 +1,41 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
+import useFirebase from '../../../Hooks/useFirebase';
+import logo from '../../../images/logo.png';
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { registerUser, user } = useFirebase();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+    const onSubmit = data => {
+        if (data.password !== data.password2) {
+            swal({
+                title: "Wrong!",
+                text: "Please enter same password",
+                icon: "error",
+                button: "ok",
+            });
+            return;
+        }
+        registerUser(data.email, data.password)
+
+        user?.email && swal({
+            title: "Congratulation!",
+            text: "Successfully created account",
+            icon: "success",
+            button: "OK",
+        })
+
+        reset();
+    }
     return (
-        <div className='row mx-auto p-5 w-75'>
-            <div className='col-md-6 col-12 mx-auto shadow p-4 border'>
+        <div className='row mx-auto p-2 w-75'>
+            <div className='col-md-6 col-12 mx-auto shadow p-4'>
+                <p className='text-center'>
+                    <img style={{ width: '180px' }} src={logo} alt="" />
+                </p>
                 <h4 className='text-center mb-4 text-muted'>Register</h4>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='Name' {...register("name", { required: true })} className="form-control mb-2" />
@@ -16,15 +44,15 @@ const Register = () => {
                     <input placeholder='Email' {...register("email", { required: true })} className="form-control mb-2" />
                     {errors.email && <span className='text-danger'>This field is required</span>}
 
-                    <input placeholder='Password' {...register("password", { required: true })} className="form-control mb-4" />
+                    <input placeholder='Password' type='password' {...register("password", { required: true })} className="form-control mb-2" />
                     {errors.password && <span className='text-danger'>This field is required</span>}
 
-                    <input placeholder='Re-Password' {...register("password2", { required: true })} className="form-control mb-4" />
+                    <input placeholder='Re-Password' type='password'  {...register("password2", { required: true })} className="form-control mb-4" />
                     {errors.password2 && <span className='text-danger'>This field is required</span>}
 
-                    <input type="submit" className="form-control btn-form" value='Login' />
+                    <input type="submit" className="form-control btn-form" value='Register' />
                 </form>
-                <p className='mt-4 text-muted'>alrady have an account? <Link to='/login'>Register</Link></p>
+                <p className='mt-4 text-muted'>alrady have an account? <Link to='/login'>Login</Link></p>
             </div>
         </div>
     );

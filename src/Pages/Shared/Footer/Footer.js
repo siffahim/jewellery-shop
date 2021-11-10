@@ -10,9 +10,9 @@ const Footer = () => {
             <div className='footer-container p-4'>
                 <ul>
                     <p className='fs-6 fw-bold'>CONTACT INFO</p>
-                    <li><i class="fas fa-map-marker-alt"></i> Mirpur-12,Doctor Goli,Road-N2.Dhaka,Bangladesh</li>
-                    <li><i class="fas fa-phone-alt"></i> 00965321402</li>
-                    <li><i class="fas fa-envelope"></i>worldtourism2021@gmail.com</li>
+                    <li><i className="fas fa-map-marker-alt"></i> Mirpur-12,Doctor Goli,Road-N2.Dhaka,Bangladesh</li>
+                    <li><i className="fas fa-phone-alt"></i> 00965321402</li>
+                    <li><i className="fas fa-envelope"></i>worldtourism2021@gmail.com</li>
                     <ul className='footer-icon'>
                         <li className='me-2 icon'><i className="fab fa-facebook-square"></i></li>
                         <li className='me-2 icon'><i className="fab fa-twitter-square"></i></li>
@@ -22,20 +22,20 @@ const Footer = () => {
                 </ul>
                 <ul>
                     <p className='fs-6 fw-bold'>INFORMATION</p>
-                    <li><i class="fal fa-window-minimize"></i> About Us</li>
-                    <li><i class="fal fa-window-minimize"></i> Delivery</li>
-                    <li><i class="fal fa-window-minimize"></i> Prices Drop</li>
-                    <li><i class="fal fa-window-minimize"></i> New Products</li>
-                    <li><i class="fal fa-window-minimize"></i> Best Seles</li>
+                    <li><i className="fal fa-window-minimize"></i> About Us</li>
+                    <li><i className="fal fa-window-minimize"></i> Delivery</li>
+                    <li><i className="fal fa-window-minimize"></i> Prices Drop</li>
+                    <li><i className="fal fa-window-minimize"></i> New Products</li>
+                    <li><i className="fal fa-window-minimize"></i> Best Seles</li>
                 </ul>
                 <ul>
                     <p className='fs-6 fw-bold'>MY ACCOUNT</p>
-                    <li><i class="fal fa-window-minimize"></i> Personal Info</li>
-                    <li><i class="fal fa-window-minimize"></i> Orders</li>
-                    <li><i class="fal fa-window-minimize"></i> Our Services</li>
-                    <li><i class="fal fa-window-minimize"></i> Credit Slips</li>
-                    <li><i class="fal fa-window-minimize"></i> Addresses</li>
-                    <li><i class="fal fa-window-minimize"></i> My Wishlist</li>
+                    <li><i className="fal fa-window-minimize"></i> Personal Info</li>
+                    <li><i className="fal fa-window-minimize"></i> Orders</li>
+                    <li><i className="fal fa-window-minimize"></i> Our Services</li>
+                    <li><i className="fal fa-window-minimize"></i> Credit Slips</li>
+                    <li><i className="fal fa-window-minimize"></i> Addresses</li>
+                    <li><i className="fal fa-window-minimize"></i> My Wishlist</li>
                 </ul>
                 <ul>
                     <p className='fs-6 fw-bold'>INSTAGRAM POST</p>
