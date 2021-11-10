@@ -15,6 +15,7 @@ import {
     Link, Route, Switch, useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
+import AdminRoute from '../../AdminRoute/AdminRoute';
 import CreateProduct from '../CreateProduct/CreateProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageAlOrders from '../ManageAlOrders/ManageAlOrders';
@@ -29,7 +30,7 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { path, url } = useRouteMatch();
-    const { user, logOut } = useAuth();
+    const { user, logOut, admin } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -41,10 +42,14 @@ function Dashboard(props) {
             <List>
                 <ListItem button ><Link to='/home'>Home</Link></ListItem>
                 <ListItem button ><Link to={`${url}`}>Review</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}/manageAlOrders`}>Manage Orders</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}/createProduct`}>Create Product</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
+                {
+                    admin && <Box>
+                        <ListItem button ><Link exact to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
+                        <ListItem button ><Link exact to={`${url}/manageAlOrders`}>Manage Orders</Link></ListItem>
+                        <ListItem button ><Link exact to={`${url}/createProduct`}>Create Product</Link></ListItem>
+                        <ListItem button ><Link exact to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
+                    </Box>
+                }
                 <ListItem button ><Link to={`${url}/myOrders`}>My Orders</Link></ListItem>
                 <ListItem button ><Link to={`${url}/pay`}>Pay</Link></ListItem>
                 <ListItem button ><Link to={`${url}/logout`} onClick={logOut}>Logout</Link></ListItem>
@@ -120,24 +125,24 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <Review />
                     </Route>
-                    <Route path={`${path}/makeAdmin`}>
-                        <MakeAdmin />
-                    </Route>
                     <Route path={`${path}/myOrders`}>
                         <MyOrder />
-                    </Route>
-                    <Route path={`${path}/manageAlOrders`}>
-                        <ManageAlOrders />
-                    </Route>
-                    <Route path={`${path}/createProduct`}>
-                        <CreateProduct />
-                    </Route>
-                    <Route path={`${path}/manageProduct`}>
-                        <ManageProduct />
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Pay />
                     </Route>
+                    <AdminRoute path={`${path}/makeAdmin`}>
+                        <MakeAdmin />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageAlOrders`}>
+                        <ManageAlOrders />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/createProduct`}>
+                        <CreateProduct />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProduct`}>
+                        <ManageProduct />
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>
