@@ -22,7 +22,7 @@ const Register = () => {
             });
             return;
         }
-        registerUser(data.email, data.password, location, history)
+        registerUser(data.email, data.password, data.name, location, history)
         reset();
     }
     return (

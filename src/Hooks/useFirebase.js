@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import swal from "sweetalert";
 import initializationAuthentication from "../Pages/Login/Firebase/firebase.init";
@@ -12,14 +12,26 @@ const useFirebase = () => {
     const auth = getAuth();
 
     //email and password
-    const registerUser = (email, password, location, history) => {
+    const registerUser = (email, password, name, location, history) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const uri = location.state?.from || '/';
-                setUser(result.user)
+            .then(() => {
+                const newUser = { email, displayName: name }
+                setUser(newUser)
+                //update user name on firebase
+                updateProfile(auth.currentUser, { displayName: name })
+                    .then(() => {
+                        setError('')
+                    }).catch(err => setError(err.message))
+
+                //alert successfully
                 swal({ title: "Congratulation!", text: "Successfully created account", icon: "success" })
+
+                //redirect to own place
+                const uri = location.state?.from || '/';
                 history.push(uri)
+
+                saveUserDb(email, name)
                 setError('')
             })
             .catch(err => {
@@ -69,6 +81,17 @@ const useFirebase = () => {
                 swal(" ", "Logout successfully", "warning");
                 setUser({})
             })
+    }
+
+    const saveUserDb = (email, displayName) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }).then()
     }
 
     return {

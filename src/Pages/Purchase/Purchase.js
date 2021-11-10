@@ -6,8 +6,9 @@ import useAuth from '../../Hooks/useAuth';
 import './Purchase.css';
 
 const Purchase = ({ product }) => {
-    const { name, img, ratig } = product;
+    const { name, img, ratig, price, stock } = product;
     const { user } = useAuth();
+    console.log(user)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => { console.log(data) };
     return (
@@ -20,18 +21,16 @@ const Purchase = ({ product }) => {
                                 <img className='img-fluid' src={img} alt="" />
                             </div>
                             <div className='col-md-6 col-12'>
-                                <p className='fs-5 fw-bold text-muted'>{name}</p>
+                                <p className='fs-4 fw-bold text-muted mt-2'>{name?.toUpperCase()}</p>
                                 <Rating
                                     initialRating={ratig}
                                     emptySymbol="far fa-star text-custom"
                                     fullSymbol="fas fa-star text-custom"
                                     readonly
                                 />
-                                <p className='text-muted'><i class="far fa-clock text-custom"></i>Date</p>
-                                <p className='text-muted'>
-                                    You also need to have adequate knowledge about jewelry making and its terms, which might not be easy to grab.
-                                </p>
-                                <button className='btn-regular'>Learn More</button>
+                                <h5 className='mt-3'>${price}</h5>
+                                <p className='text-muted'><small>only {stock} stock</small></p>
+                                <p>Women's Jewellery</p>
                             </div>
                         </div>
                     </div>

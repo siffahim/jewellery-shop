@@ -15,7 +15,10 @@ import {
     Link, Route, Switch, useRouteMatch
 } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
-import DashboardHome from '../DashboardHome/DashboardHome';
+import CreateProduct from '../CreateProduct/CreateProduct';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageAlOrders from '../ManageAlOrders/ManageAlOrders';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import MyOrder from '../MyOrder/MyOrder';
 import Pay from '../Pay/Pay';
 import Review from '../Review/Review';
@@ -37,8 +40,11 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <ListItem button ><Link to='/home'>Home</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}`}>Dashboard</Link></ListItem>
-                <ListItem button ><Link to={`${url}/myOrders`}>My Order</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}`}>Make Admin</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}/manageAlOrders`}>Manage Orders</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}/createProduct`}>Create Product</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
+                <ListItem button ><Link to={`${url}/myOrders`}>My Orders</Link></ListItem>
                 <ListItem button ><Link to={`${url}/review`}>Review</Link></ListItem>
                 <ListItem button ><Link to={`${url}/pay`}>Pay</Link></ListItem>
                 <ListItem button ><Link to={`${url}/logout`} onClick={logOut}>Logout</Link></ListItem>
@@ -70,9 +76,6 @@ function Dashboard(props) {
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Dashborad
-                    </Typography>
-                    <Typography variant="body.1" sx={{ ml: 'auto' }} noWrap component="div">
-                        Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -115,10 +118,19 @@ function Dashboard(props) {
                 <Toolbar />
                 <Switch>
                     <Route exact path={path}>
-                        <DashboardHome />
+                        <MakeAdmin />
                     </Route>
                     <Route path={`${path}/myOrders`}>
                         <MyOrder />
+                    </Route>
+                    <Route path={`${path}/manageAlOrders`}>
+                        <ManageAlOrders />
+                    </Route>
+                    <Route path={`${path}/createProduct`}>
+                        <CreateProduct />
+                    </Route>
+                    <Route path={`${path}/manageProduct`}>
+                        <ManageProduct />
                     </Route>
                     <Route path={`${path}/review`}>
                         <Review />

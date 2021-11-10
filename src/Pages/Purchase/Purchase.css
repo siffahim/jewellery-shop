@@ -14,13 +14,13 @@
     margin-top: 10px;
 }
 .card-detail{
-    height: 310px;
     box-shadow: 0 0 3px rgb(0,0,0,0.3);
     padding: 5px;
     border-radius: 3px;
+    overflow: hidden;
 }
 .card-detail img{
-    height: auto;
+    height: 100%;
 }
 
 @media only screen and (max-width:688px){
