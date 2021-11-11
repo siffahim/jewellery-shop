@@ -5,7 +5,7 @@ const ManageProductCard = ({ product, setNumber }) => {
     const { img, name, price, stock, _id } = product;
     const btnDelete = {
         border: 'none',
-        backgroundColor: "#cd2027",
+        backgroundColor: "#daa520",
         color: "#fff",
         fontSize: "17px",
         borderRadius: "3px"

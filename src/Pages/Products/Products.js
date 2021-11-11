@@ -15,6 +15,8 @@ const Products = () => {
 
     return (
         <Container>
+            <h3 className='text-center mt-4'>Products</h3>
+            <p className='text-center'>Add our products to weekly lineup</p>
             <Row xs={1} md={3} className="g-4">
                 {
                     products.map(product => <Product

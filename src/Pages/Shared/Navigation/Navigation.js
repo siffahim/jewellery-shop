@@ -7,7 +7,7 @@ import logo from '../../../images/logo.png';
 const Navigation = () => {
     const { user, logOut } = useAuth();
     return (
-        <Navbar bg="light" className='px-3' variant="light" collapseOnSelect expand="lg">
+        <Navbar bg="light" className='px-2' variant="light" collapseOnSelect expand="lg">
             <Navbar.Brand href="#home">
                 <img width='150px' src={logo} alt="" />
             </Navbar.Brand>

@@ -76,7 +76,7 @@ const Purchase = ({ product }) => {
                             <input type="number" {...register("phone", { required: true })} placeholder="Phone" className='form-control' />
                             {errors.phone && <span className='text-danger'>This field is required</span>}
 
-                            <input type="submit" value="Proceed Now" className='btn-regular' />
+                            <input type="submit" value="Proceed Now" className='btn-form' />
                         </form>
                     </div>
                 </div>

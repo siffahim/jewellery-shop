@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+import './Product.css';
 
 const Product = ({ product }) => {
     const { name, img, _id } = product;
@@ -11,17 +12,15 @@ const Product = ({ product }) => {
     }
     return (
         <Col>
-            <Card>
-                <Card.Img variant="top" src={img} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        This is a longer card with supporting text below as a natural
-                        lead-in to additional content. This content is a little bit longer.
-                    </Card.Text>
-                    <button className='btn-regular' onClick={() => handlePurchase(_id)}>PURCHASE</button>
+            <div className='card-container' >
+                <div className='photo'>
+                    <Card.Img variant="top" src={img} />
+                </div>
+                <Card.Body className='photo-detail'>
+                    <h6 className='fs-5 fw-normal'>{name}</h6>
+                    <button onClick={() => handlePurchase(_id)} className='btn-regular btn-custom'>Purchase</button>
                 </Card.Body>
-            </Card>
+            </div>
         </Col>
     );
 };

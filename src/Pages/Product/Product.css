@@ -1,0 +1,35 @@
+.card-container{
+    position: relative;
+}
+.photo img{
+    width: 100%;
+    height: 210px;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+.photo{
+    overflow: hidden;
+}
+.card-container:hover img{
+  transform:scale(1.1);
+}
+.photo-detail{
+    position:absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    bottom:3px;
+    padding: 5px;
+    color: rgb(43, 41, 41);
+    overflow: hidden;
+}
+.btn-custom{
+    text-decoration: none;
+    right: -100px;
+    transition:all 0.2s;
+}
+.card-container:hover .btn-custom{
+    display: block;
+    right:0px;
+}

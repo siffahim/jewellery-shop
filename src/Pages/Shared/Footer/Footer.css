@@ -8,10 +8,10 @@
 
 .btn-regular{
     border: none;
-    background:linear-gradient(#cd2027,#af383c);
+    background:goldenrod;
     color: #fff;
-    padding: 9px 15px;
-    border-radius: 3px;
+    padding: 7px 15px;
+    border-radius:50px;
     transition: 0.5s;
     position: relative;
     z-index: 99;
@@ -24,6 +24,7 @@
     top:0;
     z-index: -10;
     position: absolute;
+     border-radius:50px;
     transition: 0.3s;
 }
 .btn-regular:hover:before{
@@ -38,14 +39,17 @@ li{
     margin: 10px 0;
 }
 .footer-container .fas{
-    color:#cd2027;
+    color:#daa520;
     margin-right: 5px;
 }
 .far,.fal{
-    color:#cd2027;
+    color:#daa520;
 }
 .text-custom{
-    color:#cd2027;
+    color:#daa520;
+}
+.bg-custom{
+    background-color:#daa520;
 }
 .b{
     color: #fff;
@@ -67,7 +71,7 @@ li{
 .footer-icon li{
     width: 40px;
     height: 40px;
-    background-color: #cd2027;
+    background-color: #daa520;
     display: flex;
     justify-content: center;
     align-items: center;
