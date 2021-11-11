@@ -9,7 +9,7 @@ const Blog = () => {
         <Container>
             <div className="row g-4 d-flex align-items-center my-5">
                 <div className='col-12 col-md-5'>
-                    <img src={bg} alt="" />
+                    <img className='img-fluid' src={bg} alt="" />
                 </div>
                 <div className='col-12 col-md-7'>
                     <h2 className='text-muted mb-4'>About Us</h2>

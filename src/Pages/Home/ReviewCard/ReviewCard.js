@@ -10,9 +10,9 @@ const ReviewCard = ({ review }) => {
         <Col>
             <div className='review-card'>
                 <img src={img} alt="" />
-                <p>{feedback}</p>
+                <p className='text-muted'>{feedback}</p>
                 <h6>{name}</h6>
-                <p><small>{title}</small></p>
+                <p className='text-muted'><small>{title}</small></p>
 
                 <Rating
                     initialRating={rating}

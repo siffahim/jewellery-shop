@@ -9,7 +9,7 @@ const Banner = () => {
                 <p className='fs-6'><small>WOMEN'S JEWELLERY</small></p>
                 <h1 className='fw-normal fs-1'>FAMILY <span>JEWELLERY</span><br /> COLLECTION</h1>
                 <p>Follow your true passion, let your jewelry guide you.</p>
-                <button className='btn-regular'>Collection</button>
+                <button className='btn-regular'>Shop Now</button>
             </Container>
         </div>
     )

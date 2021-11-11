@@ -15,9 +15,10 @@ const ReviewSection = () => {
         reviewCollector()
     }, [])
     return (
-        <>
+        <div className='bg-light p-1'>
             <Container>
-                <h3>Our Customer Review</h3>
+                <h3 className='text-center mt-4'>Testimonials</h3>
+                <p className='text-center'>What the say</p>
                 <Row xs={1} md={4} className="g-4 my-3">
                     {
                         reviews.map(review => <ReviewCard
@@ -26,7 +27,7 @@ const ReviewSection = () => {
                     }
                 </Row>
             </Container>
-        </>
+        </div>
 
     );
 };

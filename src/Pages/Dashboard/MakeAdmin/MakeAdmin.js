@@ -31,7 +31,7 @@ const MakeAdmin = () => {
                 <div className='col-md-6 col-12 mx-auto'>
                     <form onSubmit={handleMakeAdmin} className='d-flex '>
                         <input type="email" ref={emailRef} className='form-control' placeholder=" Email" />
-                        <button className='btn-regular ms-1' type='submit'>ADMIN</button>
+                        <button className='btn-form ms-1' type='submit'>ADMIN</button>
                     </form>
                 </div>
             </div>
