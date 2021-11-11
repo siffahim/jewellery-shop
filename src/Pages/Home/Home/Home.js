@@ -3,6 +3,7 @@ import Products from '../../Products/Products';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
+import ReviewSection from '../ReviewSection/ReviewSection';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Navigation />
             <Banner />
             <Products />
+            <ReviewSection />
             <Footer />
         </div>
     );
