@@ -18,6 +18,9 @@ const Navigation = () => {
                     <Nav.Link as={Link} to="/jewellery">Jewellery Shop</Nav.Link>
                     <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                     {
+                        user.email && <Nav.Link href="#" className='fw-bold fs-6 text-warning'>{user.displayName}</Nav.Link>
+                    }
+                    {
                         user.email ? <button className='btn-regular' onClick={logOut}>Logout</button> : <Nav.Link as={Link} to="/login" >Login</Nav.Link>
                     }
                 </Nav>

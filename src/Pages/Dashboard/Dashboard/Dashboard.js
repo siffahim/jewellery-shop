@@ -23,6 +23,7 @@ import ManageProduct from '../ManageProduct/ManageProduct';
 import MyOrder from '../MyOrder/MyOrder';
 import Pay from '../Pay/Pay';
 import Review from '../Review/Review';
+import './Dashboard.css';
 
 const drawerWidth = 240;
 
@@ -39,20 +40,21 @@ function Dashboard(props) {
     const drawer = (
         <div>
             <Divider />
-            <List>
-                <ListItem button ><Link to='/home'>Home</Link></ListItem>
-                <ListItem button ><Link exact to={`${url}`}>Review</Link></ListItem>
+            <p className=' text-center bg-custom text-white p-3 fs-5'><i class="fas fa-user-alt"></i> {user.displayName}</p>
+            <List className='nasted-container'>
+                <ListItem button><Link to='/home' className='nested-menu'  ><i class="fas fa-home"></i> Home</Link></ListItem>
+                <ListItem button ><Link className='nested-menu' exact to={`${url}`}><i class="fas fa-external-link-alt"></i> Review</Link></ListItem>
                 {
                     admin && <Box>
-                        <ListItem button ><Link to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
-                        <ListItem button ><Link to={`${url}/manageAlOrders`}>Manage All Orders</Link></ListItem>
-                        <ListItem button ><Link to={`${url}/createProduct`}>Create Product</Link></ListItem>
-                        <ListItem button ><Link to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
+                        <ListItem button ><Link className='nested-menu' to={`${url}/makeAdmin`}><i class="fas fa-users-cog"></i> Make Admin</Link></ListItem>
+                        <ListItem button ><Link className='nested-menu' to={`${url}/manageAlOrders`}><i class="fas fa-tasks"></i> Manage All Orders</Link></ListItem>
+                        <ListItem button ><Link className='nested-menu' to={`${url}/createProduct`}><i class="fas fa-plus"></i> Create Product</Link></ListItem>
+                        <ListItem button ><Link className='nested-menu' to={`${url}/manageProduct`}><i class="fas fa-sort-amount-up-alt"></i> Manage Product</Link></ListItem>
                     </Box>
                 }
-                <ListItem button ><Link to={`${url}/myOrders`}>My Orders</Link></ListItem>
-                <ListItem button ><Link to={`${url}/pay`}>Pay</Link></ListItem>
-                <ListItem button ><Link to={`${url}/logout`} onClick={logOut}>Logout</Link></ListItem>
+                <ListItem button ><Link className='nested-menu' to={`${url}/myOrders`}><i class="fas fa-user-clock"></i> My Orders</Link></ListItem>
+                <ListItem button ><Link className='nested-menu' to={`${url}/pay`}><i class="fas fa-shopping-bag"></i> Pay</Link></ListItem>
+                <ListItem button ><Link className='nested-menu' to={`${url}/logout`} onClick={logOut}><i class="fas fa-sign-out-alt"></i> Logout</Link></ListItem>
             </List>
         </div>
     );
@@ -69,7 +71,7 @@ function Dashboard(props) {
                     ml: { sm: `${drawerWidth}px` },
                 }}
             >
-                <Toolbar sx={{ backgroundColor: '#cd2027' }}>
+                <Toolbar sx={{ background: 'goldenrod' }}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
