@@ -18,7 +18,7 @@ const Purchase = ({ product }) => {
             img,
             product: name
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://limitless-scrubland-09812.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

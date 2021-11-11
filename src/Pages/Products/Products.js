@@ -7,7 +7,7 @@ const Products = () => {
     //datasize
     const size = 6;
     useEffect(() => {
-        fetch(`http://localhost:5000/products?size=${size}`)
+        fetch(`https://limitless-scrubland-09812.herokuapp.com/products?size=${size}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

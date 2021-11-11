@@ -7,7 +7,7 @@ const MakeAdmin = () => {
 
     const handleMakeAdmin = e => {
         const email = emailRef.current.value
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://limitless-scrubland-09812.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

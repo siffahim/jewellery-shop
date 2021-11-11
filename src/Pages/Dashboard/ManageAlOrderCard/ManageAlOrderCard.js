@@ -19,7 +19,7 @@ const ManageAlOrderCard = ({ user, setNumber }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`http://localhost:5000/orders/${id}`, {
+                fetch(`https://limitless-scrubland-09812.herokuapp.com/orders/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -34,7 +34,7 @@ const ManageAlOrderCard = ({ user, setNumber }) => {
     }
     const handleChange = e => {
         const task = e.target.checked;
-        fetch('http://localhost:5000/orders', {
+        fetch('https://limitless-scrubland-09812.herokuapp.com/orders', {
             method: 'PUT',
             headers: {
                 "content-type": 'application/json',

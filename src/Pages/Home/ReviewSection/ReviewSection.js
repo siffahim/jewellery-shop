@@ -7,7 +7,7 @@ const ReviewSection = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         async function reviewCollector() {
-            const res = await fetch('http://localhost:5000/reviews')
+            const res = await fetch('https://limitless-scrubland-09812.herokuapp.com/reviews')
             const data = await res.json()
 
             setReviews(data)

@@ -10,7 +10,7 @@ const AddProduct = () => {
     const [product, setProduct] = useState({});
     useEffect(() => {
         async function singleProduct() {
-            const res = await fetch(`http://localhost:5000/products/${purchaseId}`)
+            const res = await fetch(`https://limitless-scrubland-09812.herokuapp.com/products/${purchaseId}`)
             const data = await res.json()
             setProduct(data)
         }

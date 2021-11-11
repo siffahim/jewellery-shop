@@ -8,7 +8,7 @@ const ManageAlOrders = () => {
     const [users, setusers] = useState([]);
     const [number, setNumber] = useState(0);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://limitless-scrubland-09812.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setusers(data))
     }, [number])

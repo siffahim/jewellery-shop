@@ -13,7 +13,7 @@ const Review = () => {
         setLoginData(newLoginData)
     }
     const handleOnSubmit = e => {
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://limitless-scrubland-09812.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'

@@ -20,7 +20,7 @@ const MyOrderCard = ({ order }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`http://localhost:5000/orders/${id}`, {
+                fetch(`https://limitless-scrubland-09812.herokuapp.com/orders/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

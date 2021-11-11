@@ -19,7 +19,7 @@ const ManageProductCard = ({ product, setNumber }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`http://localhost:5000/products/${id}`, {
+                fetch(`https://limitless-scrubland-09812.herokuapp.com/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
