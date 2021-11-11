@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import logo from '../../../images/logo.png';
 import ManageAlOrderCard from '../ManageAlOrderCard/ManageAlOrderCard';
+
 
 const ManageAlOrders = () => {
     const [users, setusers] = useState([]);
@@ -12,6 +14,10 @@ const ManageAlOrders = () => {
     }, [number])
     return (
         <Container>
+            <p className='text-center'>
+                <img style={{ width: '180px' }} src={logo} alt="" />
+            </p>
+            <h6 className='text-center text-muted fw-bold'>Create Product</h6>
             <div className="table-responsive my-4 p-3 shadow rounded" data-aos="fade-up">
                 <table className='table'>
                     <thead>

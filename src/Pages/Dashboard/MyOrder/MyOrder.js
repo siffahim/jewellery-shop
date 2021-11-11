@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import useAuth from '../../../Hooks/useAuth';
+import logo from '../../../images/logo.png';
 import MyOrderCard from '../MyOrderCard/MyOrderCard';
 import './MyOrder.css';
 
@@ -16,6 +17,10 @@ const MyOrder = () => {
 
     return (
         <Container>
+            <p className='text-center'>
+                <img style={{ width: '180px' }} src={logo} alt="" />
+            </p>
+            <h6 className='text-center text-muted fw-bold'>My orders</h6>
             <div className="mybook-container">
                 {
                     orders.map(order => <MyOrderCard

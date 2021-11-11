@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import swal from 'sweetalert';
+import logo from '../../../images/logo.png';
 
 const Review = () => {
     const [loginData, setLoginData] = useState({})
@@ -31,7 +32,10 @@ const Review = () => {
     }
     return (
         <>
-            <h2 className='text-center text-muted'>Review page</h2>
+            <p className='text-center'>
+                <img style={{ width: '180px' }} src={logo} alt="" />
+            </p>
+            <h6 className='text-center text-muted'>Review page</h6>
             <div className='row'>
                 <div className='col-md-6 col-12 mx-auto card p-4'>
                     <Form onSubmit={handleOnSubmit}>

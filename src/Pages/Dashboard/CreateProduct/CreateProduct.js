@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import swal from 'sweetalert';
+import logo from '../../../images/logo.png';
 
 const CreateProduct = () => {
     const [createProduct, setCreateProduct] = useState({})
@@ -31,7 +32,10 @@ const CreateProduct = () => {
     }
     return (
         <>
-            <h2 className='text-center text-muted'>Create Product</h2>
+            <p className='text-center'>
+                <img style={{ width: '180px' }} src={logo} alt="" />
+            </p>
+            <h6 className='text-center text-muted'>Create Product</h6>
             <div className='row'>
                 <div className='col-md-6 col-12 mx-auto card p-4'>
                     <Form onSubmit={handleOnSubmit}>
@@ -45,7 +49,7 @@ const CreateProduct = () => {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Stock</Form.Label>
-                            <Form.Control type="number" name='Stock' onBlur={handleOnBlur} placeholder="Stock" required />
+                            <Form.Control type="number" name='stock' onBlur={handleOnBlur} placeholder="Stock" required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Rating</Form.Label>

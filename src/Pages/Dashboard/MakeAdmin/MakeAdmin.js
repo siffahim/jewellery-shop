@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import swal from 'sweetalert';
+import logo from '../../../images/logo.png';
 
 const MakeAdmin = () => {
     const emailRef = useRef('')
@@ -22,7 +23,10 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2 className='text-center fw-bold mb-4 text-muted'>Make Admin</h2>
+            <p className='text-center'>
+                <img style={{ width: '180px' }} src={logo} alt="" />
+            </p>
+            <h5 className='text-center fw-bold mb-4 text-muted'>Make Admin</h5>
             <div className='row'>
                 <div className='col-md-6 col-12 mx-auto'>
                     <form onSubmit={handleMakeAdmin} className='d-flex '>
