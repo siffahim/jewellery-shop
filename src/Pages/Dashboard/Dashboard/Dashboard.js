@@ -41,13 +41,13 @@ function Dashboard(props) {
             <Divider />
             <List>
                 <ListItem button ><Link to='/home'>Home</Link></ListItem>
-                <ListItem button ><Link to={`${url}`}>Review</Link></ListItem>
+                <ListItem button ><Link exact to={`${url}`}>Review</Link></ListItem>
                 {
                     admin && <Box>
-                        <ListItem button ><Link exact to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
-                        <ListItem button ><Link exact to={`${url}/manageAlOrders`}>Manage Orders</Link></ListItem>
-                        <ListItem button ><Link exact to={`${url}/createProduct`}>Create Product</Link></ListItem>
-                        <ListItem button ><Link exact to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
+                        <ListItem button ><Link to={`${url}/makeAdmin`}>Make Admin</Link></ListItem>
+                        <ListItem button ><Link to={`${url}/manageAlOrders`}>Manage All Orders</Link></ListItem>
+                        <ListItem button ><Link to={`${url}/createProduct`}>Create Product</Link></ListItem>
+                        <ListItem button ><Link to={`${url}/manageProduct`}>Manage Product</Link></ListItem>
                     </Box>
                 }
                 <ListItem button ><Link to={`${url}/myOrders`}>My Orders</Link></ListItem>
