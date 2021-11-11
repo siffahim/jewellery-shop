@@ -1,0 +1,12 @@
+.mybook-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10px;
+    margin: 50px 0;
+}
+
+@media only screen and (max-width:688px){
+    .mybook-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

@@ -2,15 +2,37 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import Rating from 'react-rating';
+import swal from 'sweetalert';
 import useAuth from '../../Hooks/useAuth';
 import './Purchase.css';
 
 const Purchase = ({ product }) => {
     const { name, img, ratig, price, stock } = product;
     const { user } = useAuth();
-    console.log(user)
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const onSubmit = data => { console.log(data) };
+    const time = new Date();
+    const onSubmit = data => {
+        const order = {
+            ...data,
+            time: time.toLocaleDateString(),
+            img,
+            product: name
+        }
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(order)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    swal("WOW!", "Successfully Procced order", "success");
+                }
+            })
+        reset();
+    };
     return (
         <Container>
             <div className='row gy-4 mb-5'>
@@ -49,8 +71,8 @@ const Purchase = ({ product }) => {
                             {errors.email && <span>This field is required</span>}
 
 
-                            <input defaultValue={price} type="text" {...register("number", { required: true })} placeholder="Money" className='form-control' />
-                            {errors.country && <span className='text-danger'>This field is required</span>}
+                            <input defaultValue={price} type="text" {...register("price", { required: true })} placeholder="Money" className='form-control' />
+                            {errors.price && <span className='text-danger'>This field is required</span>}
 
                             <input type="number" {...register("phone", { required: true })} placeholder="Phone" className='form-control' />
                             {errors.phone && <span className='text-danger'>This field is required</span>}

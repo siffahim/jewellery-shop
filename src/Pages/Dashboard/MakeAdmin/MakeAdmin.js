@@ -15,7 +15,7 @@ const MakeAdmin = () => {
         }).then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    swal("Congratulation!", "Login successfully", "success");
+                    swal("WOW!", "Made Admin successfully", "success");
                 }
             })
         e.preventDefault();
