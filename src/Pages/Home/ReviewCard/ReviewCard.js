@@ -8,7 +8,7 @@ const ReviewCard = ({ review }) => {
     const { img, name, title, feedback, rating } = review;
     return (
         <Col>
-            <div className='review-card'>
+            <div className='review-card text-center'>
                 <img src={img} alt="" />
                 <p className='text-muted'>{feedback}</p>
                 <h6>{name}</h6>

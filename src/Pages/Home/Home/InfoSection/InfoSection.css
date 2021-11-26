@@ -1,7 +1,7 @@
 .info-container{
     width: 100%;
     height: 80vh;
-    background:url('../../../../images/img1-top-corano1.jpg');
+    background:url('https://wpbingosite.com/wordpress/mojuri/wp-content/uploads/2021/08/slider-10-8.jpg.webp');
     background-attachment: fixed;
     background-size: cover;
     display: flex;
@@ -9,4 +9,5 @@
     align-items: center;
     text-align: center;
     margin-top: 100px;
+    color: rgb(114, 112, 112);
 }
