@@ -1,36 +1,35 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import pic from '../../../images/image-section-42-min.png';
-
+import './Service.css';
 const Service = () => {
     return (
         <Container className='custom-service'>
             <Row xs={12} sm={2} md={3} className="g-4">
                 <Col>
-                    <div className='bg-custom px-2 text-white d-flex align-items-center p-0 rounded'>
+                    <div className='woman-card'>
                         <div>
-                            <h6>Month End Banza</h6>
-                            <p>Diamond Ring,Diamond Band & All Other Latest Items</p>
+                            <h5 style={{ color: '#f44c7a' }}>Girls Accessories</h5>
+                            <p className='text-muted'>3000+ Products</p>
+                            <button className='btn-service'>Shop Now <i className="fa-solid fa-arrow-right"></i></button>
                         </div>
-                        <img style={{ width: '130px', height: '110px' }} src={pic} alt='' />
                     </div>
                 </Col>
                 <Col>
-                    <div className='bg-danger px-2 text-white d-flex align-items-center p-0 rounded'>
+                    <div className='man-card'>
                         <div>
-                            <h6>Month End Banza</h6>
-                            <p>Diamond Ring,Diamond Band & All Other Latest Items</p>
+                            <h5 style={{ color: '#03a98a' }}>Men Accessories</h5>
+                            <p className='text-muted'>4000+ Products</p>
+                            <button className='btn-service'>Shop Now <i className="fa-solid fa-arrow-right"></i></button>
                         </div>
-                        <img style={{ width: '130px', height: '110px' }} src={pic} alt='' />
                     </div>
                 </Col>
                 <Col>
-                    <div className='bg-custom px-2 text-white d-flex align-items-center p-0 rounded'>
+                    <div className='kid-card'>
                         <div>
-                            <h6>Month End Banza</h6>
-                            <p>Diamond Ring,Diamond Band & All Other Latest Items</p>
+                            <h5 style={{ color: '#f77527' }}>Kids Accessories</h5>
+                            <p className='text-muted'>302+ Kids Products</p>
+                            <button className='btn-service'>Shop Now <i className="fa-solid fa-arrow-right"></i></button>
                         </div>
-                        <img style={{ width: '130px', height: '110px' }} src={pic} alt='' />
                     </div>
                 </Col>
             </Row>

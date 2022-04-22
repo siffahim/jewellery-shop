@@ -4,7 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Blog from '../Blog/Blog';
-import ReviewSection from '../ReviewSection/ReviewSection';
+import MoreInfo from '../MoreInfo/MoreInfo';
 import Service from '../Service/Service';
 import InfoSection from './InfoSection/InfoSection';
 
@@ -15,10 +15,16 @@ const Home = () => {
             <Navigation />
             <Banner />
             <Service />
-            <Products />
+            <Products>
+                Woman
+            </Products>
             <InfoSection />
+            <Products>
+                Man
+            </Products>
+            <MoreInfo />
             <Blog />
-            <ReviewSection />
+            {/* <ReviewSection /> */}
             <Footer />
         </div>
     );

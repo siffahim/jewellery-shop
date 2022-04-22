@@ -1,30 +1,67 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import Slider from "react-slick";
 import Product from '../Product/Product';
 
-const Products = () => {
+const Products = ({ children }) => {
     const [products, setProducts] = useState([]);
     //datasize
-    const size = 6;
+    const size = 8;
     useEffect(() => {
-        fetch(`https://limitless-scrubland-09812.herokuapp.com/products?size=${size}`)
+        fetch(`https://morning-savannah-07523.herokuapp.com/products?size=${size}`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
 
-
+    let settings = {
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
     return (
         <Container>
-            <h3 className='text-center mt-4'>Products</h3>
-            <p className='text-center'>Add our products to weekly lineup</p>
-            <Row xs={1} md={3} className="g-4">
+            <div className='my-5'>
+                <h1 style={{ color: '#c29958' }} className='fs-4 fw-normal'>Top {children} Accessiries</h1>
+                <h2 style={{ letterSpacing: '2px', }} className='fw-bold fs-1 text-muted'>Enim praesent elementum</h2>
+            </div>
+            <Slider {...settings}>
                 {
                     products.map(product => <Product
                         key={product._id}
                         product={product}
                     ></Product>)
                 }
-            </Row>
+            </Slider>
         </Container>
     );
 };

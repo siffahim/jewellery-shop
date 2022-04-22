@@ -9,7 +9,7 @@ const ReviewSection = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         async function reviewCollector() {
-            const res = await fetch('https://limitless-scrubland-09812.herokuapp.com/reviews')
+            const res = await fetch('https://morning-savannah-07523.herokuapp.com/reviews')
             const data = await res.json()
 
             setReviews(data)
@@ -23,8 +23,7 @@ const ReviewSection = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        speed: 1500,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
         cssEase: "linear"
     };
 

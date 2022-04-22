@@ -18,7 +18,7 @@ const Purchase = ({ product }) => {
             img,
             product: name
         }
-        fetch('https://limitless-scrubland-09812.herokuapp.com/orders', {
+        fetch('https://morning-savannah-07523.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

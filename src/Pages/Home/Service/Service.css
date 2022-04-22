@@ -1,0 +1,34 @@
+.woman-card,
+.man-card,
+.kid-card {
+    width: 100%;
+    height: 190px;
+    background: #fde9ed url('../../../images/women-2.png');
+    background-size: cover;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.man-card {
+    width: 100%;
+    height: 190px;
+    background: #e9f6f4 url('../../../images/men-2.png');
+    background-size: cover;
+}
+
+.kid-card {
+    width: 100%;
+    height: 190px;
+    background: #f9f0ea url('../../../images/kids-2.png');
+    background-size: cover;
+}
+
+.btn-service {
+    border: none;
+    background: #2b3144;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 3px;
+}

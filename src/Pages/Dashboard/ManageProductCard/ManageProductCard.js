@@ -5,7 +5,7 @@ const ManageProductCard = ({ product, setNumber }) => {
     const { img, name, price, stock, _id } = product;
     const btnDelete = {
         border: 'none',
-        backgroundColor: "#daa520",
+        backgroundColor: "#c29958",
         color: "#fff",
         fontSize: "17px",
         borderRadius: "3px"
@@ -19,7 +19,7 @@ const ManageProductCard = ({ product, setNumber }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`https://limitless-scrubland-09812.herokuapp.com/products/${id}`, {
+                fetch(`https://morning-savannah-07523.herokuapp.com/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

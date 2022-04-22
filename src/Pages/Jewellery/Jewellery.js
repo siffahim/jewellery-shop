@@ -7,7 +7,7 @@ import Navigation from '../Shared/Navigation/Navigation';
 const Jewellery = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://limitless-scrubland-09812.herokuapp.com/products')
+        fetch('https://morning-savannah-07523.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

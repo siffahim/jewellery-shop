@@ -1,84 +1,98 @@
-.footer-container{
+.footer-container {
     display: grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 15px;
-    background-color:rgb(17, 16, 16);
+    background-color: rgb(17, 16, 16);
     color: #dcdde1;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
 }
 
-.btn-regular{
+.btn-regular {
     border: none;
-    background:goldenrod;
+    background: #c29958;
     color: #fff;
-    padding: 7px 15px;
-    border-radius:50px;
+    padding: 8px 15px;
     transition: 0.5s;
     position: relative;
     z-index: 99;
 }
-.btn-regular:before{
+
+.btn-regular:before {
     content: '';
     width: 0%;
-    height:100%;
+    height: 100%;
     left: 0;
-    top:0;
+    top: 0;
     z-index: -10;
     position: absolute;
-     border-radius:50px;
     transition: 0.3s;
 }
-.btn-regular:hover:before{
-    background-color:rgb(17, 16, 16);
+
+.btn-regular:hover:before {
+    background-color: rgb(17, 16, 16);
     width: 100%;
-    
+
 }
-ul{
+
+ul {
     list-style-type: none;
 }
-li{
+
+li {
     margin: 10px 0;
 }
-.footer-container .fas{
-    color:#daa520;
+
+.footer-container .fas {
+    color: #c29958;
     margin-right: 5px;
 }
-.far,.fal{
-    color:#daa520;
+
+.far,
+.fal {
+    color: #c29958;
 }
-.text-custom{
-    color:#daa520;
+
+.text-custom {
+    color: #c29958;
 }
-.bg-custom{
-    background-color:#daa520;
+
+.bg-custom {
+    background-color: #c29958;
 }
-.b{
+
+.b {
     color: #fff;
 }
-.footer-copyright{
+
+.footer-copyright {
     text-align: center;
-    background-color:#0e0e0ef1;
+    background-color: #0e0e0ef1;
     color: #dcdde1;
     padding-bottom: 20px;
     padding-top: 5px;
 }
-.footer-icon{
+
+.footer-icon {
     padding: 0px;
     list-style: none;
-    color:#fff;
+    color: #fff;
     font-size: 2em;
     display: flex;
 }
-.footer-icon li{
+
+.footer-icon li {
     width: 40px;
     height: 40px;
-    background-color: #daa520;
+    background-color: #c29958;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 1px;
 }
-@media only screen and (max-width:688px){
-    .footer-container{
-        grid-template-columns: repeat(1,1fr);
+
+@media only screen and (max-width:688px) {
+    .footer-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

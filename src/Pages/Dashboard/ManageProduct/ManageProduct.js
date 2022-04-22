@@ -7,7 +7,7 @@ const ManageProduct = () => {
     const [products, setProducts] = useState([]);
     const [number, setNumber] = useState(0);
     useEffect(() => {
-        fetch('https://limitless-scrubland-09812.herokuapp.com/products')
+        fetch('https://morning-savannah-07523.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [number])
