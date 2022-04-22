@@ -50,9 +50,9 @@ const Products = ({ children }) => {
     };
     return (
         <Container>
-            <div className='my-5'>
-                <h1 style={{ color: '#c29958' }} className='fs-4 fw-normal'>Top {children} Accessiries</h1>
-                <h2 style={{ letterSpacing: '2px', }} className='fw-bold fs-1 text-muted'>Enim praesent elementum</h2>
+            <div className='text-center my-5'>
+                <h1 style={{ color: '#c29958' }} className='fs-2 fw-normal'>Top {children} Accessiries</h1>
+                <h2 style={{ letterSpacing: '2px', }} className='fs-5 text-muted'>Enim praesent elementum facilisis leo rhuyrees</h2>
             </div>
             <Slider {...settings}>
                 {
