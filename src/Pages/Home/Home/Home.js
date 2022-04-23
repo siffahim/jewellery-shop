@@ -6,8 +6,8 @@ import Banner from '../Banner/Banner';
 import Blog from '../Blog/Blog';
 import MoreInfo from '../MoreInfo/MoreInfo';
 import Service from '../Service/Service';
+import TopView from '../TopView/TopView';
 import InfoSection from './InfoSection/InfoSection';
-
 
 const Home = () => {
     return (
@@ -22,9 +22,10 @@ const Home = () => {
             <Products>
                 Man
             </Products>
+            <TopView />
             <MoreInfo />
-            <Blog />
             {/* <ReviewSection /> */}
+            <Blog />
             <Footer />
         </div>
     );

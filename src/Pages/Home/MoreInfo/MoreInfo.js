@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import img from '../../../images/img-7.jpg';
 const MoreInfo = () => {
     return (
-        <div className='my-5' style={{ backgroundColor: '#fbf9f5' }}>
+        <div className='mt-5' style={{ backgroundColor: '#fbf9f5' }}>
             <Container>
                 <div className='text-center my-5'>
                     <h1 style={{ color: '#c29958' }} className='fs-3 fw-normal '>Latest Collections</h1>
