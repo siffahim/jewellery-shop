@@ -19,7 +19,7 @@ const ManageProductCard = ({ product, setNumber }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`https://morning-savannah-07523.herokuapp.com/products/${id}`, {
+                fetch(`https://jewellery-server-csgb.onrender.com/products/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

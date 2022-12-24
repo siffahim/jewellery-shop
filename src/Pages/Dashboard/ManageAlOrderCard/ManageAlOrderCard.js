@@ -19,7 +19,7 @@ const ManageAlOrderCard = ({ user, setNumber }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`https://morning-savannah-07523.herokuapp.com/orders/${id}`, {
+                fetch(`https://jewellery-server-csgb.onrender.com/orders/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -34,7 +34,7 @@ const ManageAlOrderCard = ({ user, setNumber }) => {
     }
     const handleChange = e => {
         const task = e.target.checked;
-        fetch('https://morning-savannah-07523.herokuapp.com/orders', {
+        fetch('https://jewellery-server-csgb.onrender.com/orders', {
             method: 'PUT',
             headers: {
                 "content-type": 'application/json',

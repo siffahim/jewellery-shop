@@ -13,7 +13,7 @@ const CreateProduct = () => {
         setCreateProduct(newProduct)
     }
     const handleOnSubmit = e => {
-        fetch('https://morning-savannah-07523.herokuapp.com/products', {
+        fetch('https://jewellery-server-csgb.onrender.com/products', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'

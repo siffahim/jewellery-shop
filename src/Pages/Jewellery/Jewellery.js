@@ -7,7 +7,7 @@ import Navigation from '../Shared/Navigation/Navigation';
 const Jewellery = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('https://morning-savannah-07523.herokuapp.com/products')
+        fetch('https://jewellery-server-csgb.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -18,6 +18,7 @@ const Jewellery = () => {
                 <Row xs={1} md={4} className="g-4">
                     {
                         products.map(product => <Product
+                            key={product._id}
                             product={product}
                         ></Product>)
                     }

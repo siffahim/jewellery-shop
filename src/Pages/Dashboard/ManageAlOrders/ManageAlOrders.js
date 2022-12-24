@@ -8,7 +8,7 @@ const ManageAlOrders = () => {
     const [users, setusers] = useState([]);
     const [number, setNumber] = useState(0);
     useEffect(() => {
-        fetch('https://morning-savannah-07523.herokuapp.com/orders')
+        fetch('https://jewellery-server-csgb.onrender.com/orders')
             .then(res => res.json())
             .then(data => setusers(data))
     }, [number])

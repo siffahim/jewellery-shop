@@ -9,7 +9,7 @@ const ReviewSection = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
         async function reviewCollector() {
-            const res = await fetch('https://morning-savannah-07523.herokuapp.com/reviews')
+            const res = await fetch('https://jewellery-server-csgb.onrender.com/reviews')
             const data = await res.json()
 
             setReviews(data)

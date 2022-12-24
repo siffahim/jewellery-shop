@@ -13,7 +13,7 @@ const Review = () => {
         setLoginData(newLoginData)
     }
     const handleOnSubmit = e => {
-        fetch('https://morning-savannah-07523.herokuapp.com/reviews', {
+        fetch('https://jewellery-server-csgb.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'

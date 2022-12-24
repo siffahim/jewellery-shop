@@ -18,7 +18,7 @@ const Purchase = ({ product }) => {
             img,
             product: name
         }
-        fetch('https://morning-savannah-07523.herokuapp.com/orders', {
+        fetch('https://jewellery-server-csgb.onrender.com/orders', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"

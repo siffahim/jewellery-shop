@@ -7,7 +7,7 @@ const MakeAdmin = () => {
 
     const handleMakeAdmin = e => {
         const email = emailRef.current.value
-        fetch('https://morning-savannah-07523.herokuapp.com/users/admin', {
+        fetch('https://jewellery-server-csgb.onrender.com/users/admin', {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"

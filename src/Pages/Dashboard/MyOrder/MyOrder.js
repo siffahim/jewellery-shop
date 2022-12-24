@@ -9,7 +9,7 @@ const MyOrder = () => {
     const { user } = useAuth()
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`https://morning-savannah-07523.herokuapp.com/orders?email=${user.email}`)
+        fetch(`https://jewellery-server-csgb.onrender.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
 

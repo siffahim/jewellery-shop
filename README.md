@@ -33,7 +33,7 @@ t is a single page application made with ReactJS, etc...
 
 ## Screenshot
 
-![App Screenshot](https://i.ibb.co/n71khBn/screencapture-jewellery-ec2de-web-app-2021-11-11-21-30-36.png)
+![App Screenshot](https://i.ibb.co/6nLX9k2/screencapture-localhost-3000-home-2022-12-24-17-00-43.png)
 
 
 

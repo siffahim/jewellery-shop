@@ -2,7 +2,7 @@
     position: relative;
     margin: 10px 10px;
     background-color: #edfaff;
-    padding: 8px;
+    padding: 5px;
     border-radius: 10px;
 }
 
@@ -36,7 +36,7 @@
 .btn-custom {
     text-decoration: none;
     right: -150px;
-    transition: all 0.2s;
+    transition: all 0.4s;
 }
 
 .card-container:hover .btn-custom {
